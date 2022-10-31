@@ -19,11 +19,11 @@
       <button id="rainbow">Rainbow</button>
       <button id="grayscale">Grayscale</button>
       <button id="eraser">Eraser</button>
-      <input type="range" min="2" max="100" value="16" class="sizeslider">
-      <p id="slider-value">16 x 16</p>
+      <input type="range" min="2" max="100" value="16" class="sizeslider" id="slider-value" oninput="updateValue(this.value); makeGrid(this.value)">
+      <p id="slider-value-text"></p>
       <button id="reset">Delete Sketch</button>
     </div>
-    <div class="drawing-container">
+    <div id="drawing-container">
     </div>
   </div>
 </body>

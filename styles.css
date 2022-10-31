@@ -113,12 +113,23 @@ button:hover {
   cursor: pointer; /* Cursor on hover */
   border-radius: 100%;
 }
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
 
-.drawing-container {
+#drawing-container {
   height: 600px;
   width: 600px;
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 0 10px 0px gray;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+}
+
+.box {
+  border: 0.05px solid gray;
 }
 
