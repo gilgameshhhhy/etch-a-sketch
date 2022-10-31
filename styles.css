@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Open+Sans&display=swap');
+
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(230, 230, 230);
+  color: rgb(40,40,40);
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  font-family: 'Goldman';
+  font-size: 30px;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.options-container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#colorpicker {
+  height: 100px;
+  width: 100px;
+  border: 0px;
+}
+
+button {
+  width: 200px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid gray;
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+p {
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: bold;
+}
+
+button:focus,
+button:hover {
+  background-color: gray;
+  color: white;
+}
+
+#reset {
+  border-color: red;
+  background-color: red;
+  color: white;
+}
+
+.sizeslider {
+  width: 200px;
+}
+
+.sizeslider {
+  appearance: none;
+  height: 10px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .1s; /* 0.2 seconds transition on hover */
+  transition: opacity .1s;
+  border-radius: 10px;
+}
+
+/* Mouse-over effects */
+.sizeslider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.sizeslider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: rgb(40,40,40); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 100%;
+}
+
+.sizeslider::-moz-range-thumb {
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: rgb(40,40,40); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 100%;
+}
+
+.drawing-container {
+  height: 600px;
+  width: 600px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px 0px gray;
+}
+
