@@ -14,12 +14,11 @@ chosenColorBtn.onclick = () => activeButton("chosencolor")
 rainbowBtn.onclick = () => activeButton("rainbow")
 grayscaleBtn.onclick = () => activeButton("grayscale")
 eraserBtn.onclick = () => activeButton("eraser")
+resetBtn.onclick = () => deleteSketch();
 
-function updateValue(val) {
-  sliderValueText.textContent = val + " x " + val;
-}
 
 function makeGrid(sliderValue) {
+  sliderValueText.textContent = sliderValue + " x " + sliderValue;
   clearGrid();
   drawingContainer.style.setProperty('--grid-rows', sliderValue);
   drawingContainer.style.setProperty('--grid-cols', sliderValue);
@@ -70,11 +69,16 @@ function colorGrid(e) {
 
 function updateColor(colorVal) {
   colorValue = colorVal;
+  activeButton("chosencolor");
 }
 
 
+function deleteSketch() {
+  clearGrid();
+  makeGrid(sliderValue);
+}
+
 window.onload = () => {
   makeGrid(16);
-  updateValue(16);
-  chosenColorBtn.classList.add('active');
+  activeButton("chosencolor");
 }
