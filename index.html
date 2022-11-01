@@ -14,12 +14,12 @@
   </header>
   <div class="content-container">
     <div class="options-container">
-      <input type="color" id="colorpicker" value="#282828">
-      <button id="chosencolor" autofocus>Chosen Color</button>
+      <input type="color" id="colorpicker" oninput="updateColor(this.value)">
+      <button id="chosencolor" >Chosen Color</button>
       <button id="rainbow">Rainbow</button>
       <button id="grayscale">Grayscale</button>
       <button id="eraser">Eraser</button>
-      <input type="range" min="2" max="100" value="16" class="sizeslider" id="slider-value" oninput="updateValue(this.value); makeGrid(this.value)">
+      <input type="range" min="2" max="64" value="16" class="sizeslider" id="slider-value" oninput="updateValue(this.value); makeGrid(this.value)">
       <p id="slider-value-text"></p>
       <button id="reset">Delete Sketch</button>
     </div>
