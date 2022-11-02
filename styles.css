@@ -134,10 +134,7 @@ button:hover,
   border: 1px solid gray;
 }
 
-.test {
-  background-color: gray;
-}
 
-.test2 {
-  background-color: green;
+.blackborder {
+  border: 1px solid black;
 }

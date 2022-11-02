@@ -6,7 +6,7 @@ const rainbowBtn = document.querySelector('#rainbow');
 const grayscaleBtn = document.querySelector('#grayscale');
 const eraserBtn = document.querySelector('#eraser')
 const resetBtn = document.querySelector('#reset');
-let currentButton = 'chosencolor';
+let currentButton = '';
 let colorValue = document.querySelector('#colorpicker').value;
 let rainbowValue;
 
@@ -48,7 +48,7 @@ function activeButton(buttonPressed) {
   } else if (buttonPressed == "grayscale") {
     grayscaleBtn.classList.add('active'); 
     currentButton = "grayscale"
-  } else {
+  } else if (buttonPressed == "eraser") {
     eraserBtn.classList.add('active');
     currentButton = "eraser"
   }
@@ -59,9 +59,12 @@ function colorGrid(e) {
   if (currentButton == "chosencolor") {
     e.target.style.backgroundColor = colorValue
   } else if (currentButton == "rainbow") {
-    e.target.style.backgroundColor = "red";
+    const rValue = Math.floor(Math.random()*255);
+    const gValue = Math.floor(Math.random()*255);
+    const bValue = Math.floor(Math.random()*255);
+    e.target.style.backgroundColor = 'rgb(' + rValue + ',' + gValue + ',' + bValue + ')'
   } else if (currentButton == "grayscale") {
-    e.target.style.backgroundColor = "gray";
+    e.target.style.backgroundColor = "lightgray";
   } else {
     e.target.style.backgroundColor = "white";
   }
@@ -80,5 +83,6 @@ function deleteSketch() {
 
 window.onload = () => {
   makeGrid(16);
-  activeButton("chosencolor");
 }
+
+
