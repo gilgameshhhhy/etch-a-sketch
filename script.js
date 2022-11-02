@@ -8,14 +8,12 @@ const eraserBtn = document.querySelector('#eraser')
 const resetBtn = document.querySelector('#reset');
 let currentButton = '';
 let colorValue = document.querySelector('#colorpicker').value;
-let rainbowValue;
 
 chosenColorBtn.onclick = () => activeButton("chosencolor")
 rainbowBtn.onclick = () => activeButton("rainbow")
 grayscaleBtn.onclick = () => activeButton("grayscale")
 eraserBtn.onclick = () => activeButton("eraser")
 resetBtn.onclick = () => deleteSketch();
-
 
 function makeGrid(sliderValue) {
   sliderValueText.textContent = sliderValue + " x " + sliderValue;
@@ -74,7 +72,6 @@ function updateColor(colorVal) {
   colorValue = colorVal;
   activeButton("chosencolor");
 }
-
 
 function deleteSketch() {
   clearGrid();
