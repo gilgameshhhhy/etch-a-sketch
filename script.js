@@ -81,5 +81,3 @@ function deleteSketch() {
 window.onload = () => {
   makeGrid(16);
 }
-
-
